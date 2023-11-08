@@ -176,10 +176,12 @@ class Fixtures {
     createDynamoDbTable('DocumentTable', {
       partitionKey: { name: 'type', type: cdk.aws_dynamodb.AttributeType.STRING },
       sortKey: { name: 'number', type: cdk.aws_dynamodb.AttributeType.NUMBER },
-      secondaryIndex: {
-        indexName: 'IdLookup',
-        partitionKey: { name: 'id', type: cdk.aws_dynamodb.AttributeType.STRING },
-      },
+      secondaryIndexes: [
+        {
+          indexName: 'IdLookup',
+          partitionKey: { name: 'id', type: cdk.aws_dynamodb.AttributeType.STRING },
+        },
+      ],
       stack,
     })
   static createAccountingSharedLayer = (stack: cdk.Stack) =>

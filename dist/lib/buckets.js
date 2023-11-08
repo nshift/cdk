@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createBucket = void 0;
+const cdk = require("aws-cdk-lib");
+const environment_1 = require("./environment");
+const naming_1 = require("./naming");
+const createBucket = (name, stack) => new cdk.aws_s3.Bucket(stack, (0, naming_1.makeId)(name), {
+    bucketName: (0, naming_1.makeName)(name, environment_1.Environment.region()),
+    removalPolicy: cdk.RemovalPolicy.DESTROY,
+});
+exports.createBucket = createBucket;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnVja2V0cy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL2xpYi9idWNrZXRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLG1DQUFrQztBQUNsQywrQ0FBMkM7QUFDM0MscUNBQTJDO0FBRXBDLE1BQU0sWUFBWSxHQUFHLENBQUMsSUFBWSxFQUFFLEtBQWdCLEVBQUUsRUFBRSxDQUM3RCxJQUFJLEdBQUcsQ0FBQyxNQUFNLENBQUMsTUFBTSxDQUFDLEtBQUssRUFBRSxJQUFBLGVBQU0sRUFBQyxJQUFJLENBQUMsRUFBRTtJQUN6QyxVQUFVLEVBQUUsSUFBQSxpQkFBUSxFQUFDLElBQUksRUFBRSx5QkFBVyxDQUFDLE1BQU0sRUFBRSxDQUFDO0lBQ2hELGFBQWEsRUFBRSxHQUFHLENBQUMsYUFBYSxDQUFDLE9BQU87Q0FDekMsQ0FBQyxDQUFBO0FBSlMsUUFBQSxZQUFZLGdCQUlyQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIGNkayBmcm9tICdhd3MtY2RrLWxpYidcbmltcG9ydCB7IEVudmlyb25tZW50IH0gZnJvbSAnLi9lbnZpcm9ubWVudCdcbmltcG9ydCB7IG1ha2VJZCwgbWFrZU5hbWUgfSBmcm9tICcuL25hbWluZydcblxuZXhwb3J0IGNvbnN0IGNyZWF0ZUJ1Y2tldCA9IChuYW1lOiBzdHJpbmcsIHN0YWNrOiBjZGsuU3RhY2spID0+XG4gIG5ldyBjZGsuYXdzX3MzLkJ1Y2tldChzdGFjaywgbWFrZUlkKG5hbWUpLCB7XG4gICAgYnVja2V0TmFtZTogbWFrZU5hbWUobmFtZSwgRW52aXJvbm1lbnQucmVnaW9uKCkpLFxuICAgIHJlbW92YWxQb2xpY3k6IGNkay5SZW1vdmFsUG9saWN5LkRFU1RST1ksXG4gIH0pXG4iXX0=

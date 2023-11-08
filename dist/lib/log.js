@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createLogGroup = void 0;
+const cdk = require("aws-cdk-lib");
+const naming_1 = require("./naming");
+const createLogGroup = (name, stack, api) => new cdk.aws_logs.CfnLogGroup(stack, (0, naming_1.makeId)(name), {
+    logGroupName: `/aws/apigateway/${api.name}`,
+    retentionInDays: 7,
+});
+exports.createLogGroup = createLogGroup;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9nLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vbGliL2xvZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSxtQ0FBa0M7QUFDbEMscUNBQWlDO0FBRTFCLE1BQU0sY0FBYyxHQUFHLENBQUMsSUFBWSxFQUFFLEtBQWdCLEVBQUUsR0FBZ0MsRUFBRSxFQUFFLENBQ2pHLElBQUksR0FBRyxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUMsS0FBSyxFQUFFLElBQUEsZUFBTSxFQUFDLElBQUksQ0FBQyxFQUFFO0lBQ2hELFlBQVksRUFBRSxtQkFBbUIsR0FBRyxDQUFDLElBQUksRUFBRTtJQUMzQyxlQUFlLEVBQUUsQ0FBQztDQUNuQixDQUFDLENBQUE7QUFKUyxRQUFBLGNBQWMsa0JBSXZCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgY2RrIGZyb20gJ2F3cy1jZGstbGliJ1xuaW1wb3J0IHsgbWFrZUlkIH0gZnJvbSAnLi9uYW1pbmcnXG5cbmV4cG9ydCBjb25zdCBjcmVhdGVMb2dHcm91cCA9IChuYW1lOiBzdHJpbmcsIHN0YWNrOiBjZGsuU3RhY2ssIGFwaTogY2RrLmF3c19hcGlnYXRld2F5djIuQ2ZuQXBpKSA9PlxuICBuZXcgY2RrLmF3c19sb2dzLkNmbkxvZ0dyb3VwKHN0YWNrLCBtYWtlSWQobmFtZSksIHtcbiAgICBsb2dHcm91cE5hbWU6IGAvYXdzL2FwaWdhdGV3YXkvJHthcGkubmFtZX1gLFxuICAgIHJldGVudGlvbkluRGF5czogNyxcbiAgfSlcbiJdfQ==

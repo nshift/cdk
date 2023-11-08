@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Environment = void 0;
+class Environment {
+}
+exports.Environment = Environment;
+Environment.projectName = () => required('PROJECT_NAME');
+Environment.region = () => required('REGION');
+Environment.environment = () => required('ENVIRONMENT');
+function required(environmentName) {
+    const environmentVariable = process.env[environmentName];
+    if (!environmentVariable) {
+        throw new Error(`Environment variable ${environmentName} is required.`);
+    }
+    return environmentVariable;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZW52aXJvbm1lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9saWIvZW52aXJvbm1lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsTUFBYSxXQUFXOztBQUF4QixrQ0FJQztBQUhRLHVCQUFXLEdBQUcsR0FBRyxFQUFFLENBQUMsUUFBUSxDQUFDLGNBQWMsQ0FBQyxDQUFBO0FBQzVDLGtCQUFNLEdBQUcsR0FBRyxFQUFFLENBQUMsUUFBUSxDQUFDLFFBQVEsQ0FBQyxDQUFBO0FBQ2pDLHVCQUFXLEdBQUcsR0FBRyxFQUFFLENBQUMsUUFBUSxDQUFDLGFBQWEsQ0FBQyxDQUFBO0FBR3BELFNBQVMsUUFBUSxDQUFDLGVBQXVCO0lBQ3ZDLE1BQU0sbUJBQW1CLEdBQUcsT0FBTyxDQUFDLEdBQUcsQ0FBQyxlQUFlLENBQUMsQ0FBQTtJQUN4RCxJQUFJLENBQUMsbUJBQW1CLEVBQUU7UUFDeEIsTUFBTSxJQUFJLEtBQUssQ0FBQyx3QkFBd0IsZUFBZSxlQUFlLENBQUMsQ0FBQTtLQUN4RTtJQUNELE9BQU8sbUJBQW1CLENBQUE7QUFDNUIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjbGFzcyBFbnZpcm9ubWVudCB7XG4gIHN0YXRpYyBwcm9qZWN0TmFtZSA9ICgpID0+IHJlcXVpcmVkKCdQUk9KRUNUX05BTUUnKVxuICBzdGF0aWMgcmVnaW9uID0gKCkgPT4gcmVxdWlyZWQoJ1JFR0lPTicpXG4gIHN0YXRpYyBlbnZpcm9ubWVudCA9ICgpID0+IHJlcXVpcmVkKCdFTlZJUk9OTUVOVCcpXG59XG5cbmZ1bmN0aW9uIHJlcXVpcmVkKGVudmlyb25tZW50TmFtZTogc3RyaW5nKSB7XG4gIGNvbnN0IGVudmlyb25tZW50VmFyaWFibGUgPSBwcm9jZXNzLmVudltlbnZpcm9ubWVudE5hbWVdXG4gIGlmICghZW52aXJvbm1lbnRWYXJpYWJsZSkge1xuICAgIHRocm93IG5ldyBFcnJvcihgRW52aXJvbm1lbnQgdmFyaWFibGUgJHtlbnZpcm9ubWVudE5hbWV9IGlzIHJlcXVpcmVkLmApXG4gIH1cbiAgcmV0dXJuIGVudmlyb25tZW50VmFyaWFibGVcbn1cbiJdfQ==
