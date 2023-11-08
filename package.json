@@ -2,7 +2,11 @@
   "name": "@nshift/cdk",
   "version": "0.1.0",
   "main": "dist/index.js",
-  "type": "module",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nshift/cdk"
+  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
