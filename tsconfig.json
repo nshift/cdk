@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "CommonJS",
+    "module": "ES2020",
     "lib": [
       "es2020",
       "dom"
     ],
+    "moduleResolution": "node",
     "composite": true,
     "outDir": "dist",
     "declaration": true,
