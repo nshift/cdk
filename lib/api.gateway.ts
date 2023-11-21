@@ -28,7 +28,7 @@ export const createApiIntegration = (
     integrationUri: `arn:aws:apigateway:${Environment.region()}:lambda:path/2015-03-31/functions/${
       props.lambda.functionArn
     }/invocations`,
-    integrationMethod: props.integrationMethod,
+    integrationMethod: 'POST',
     payloadFormatVersion: '2.0',
   })
 
