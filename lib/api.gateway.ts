@@ -8,7 +8,7 @@ export const createApiGateway = (name: string, stack: cdk.Stack) =>
     protocolType: 'HTTP',
     corsConfiguration: {
       allowHeaders: ['Authorization'],
-      allowMethods: ['GET', 'POST'],
+      allowMethods: ['GET', 'POST', 'DELETE'],
       allowOrigins: ['*'],
     },
   })
