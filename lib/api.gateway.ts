@@ -2,12 +2,12 @@ import * as cdk from 'aws-cdk-lib'
 import { Environment } from './environment'
 import { makeId, makeName } from './naming'
 
-export const createApiGateway = (name: string, stack: cdk.Stack) =>
+export const createApiGateway = (name: string, stack: cdk.Stack, allowHeaders: string[]) =>
   new cdk.aws_apigatewayv2.CfnApi(stack, makeId(name), {
     name: makeName(name),
     protocolType: 'HTTP',
     corsConfiguration: {
-      allowHeaders: ['Authorization'],
+      allowHeaders: Array.from(new Set(['Authorization', ...allowHeaders])),
       allowMethods: ['GET', 'POST', 'DELETE'],
       allowOrigins: ['*'],
     },

@@ -1,5 +1,5 @@
 import * as cdk from 'aws-cdk-lib';
-export declare const createApi: (stack: cdk.Stack) => cdk.aws_apigatewayv2.CfnApi;
+export declare const createApi: (stack: cdk.Stack, allowHeaders: string[]) => cdk.aws_apigatewayv2.CfnApi;
 export declare const deployApi: (stack: cdk.Stack, api: cdk.aws_apigatewayv2.CfnApi, dependencies: cdk.CfnResource[]) => {
     apiDevelopment: cdk.aws_apigatewayv2.CfnDeployment;
     logGroup: cdk.aws_logs.CfnLogGroup;

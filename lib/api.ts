@@ -9,7 +9,7 @@ import {
 import { createLambda, createLambdaPermission } from './lambda'
 import { createLogGroup } from './log'
 
-export const createApi = (stack: cdk.Stack) => createApiGateway('Api', stack)
+export const createApi = (stack: cdk.Stack, allowHeaders: string[]) => createApiGateway('Api', stack, allowHeaders)
 
 export const deployApi = (stack: cdk.Stack, api: cdk.aws_apigatewayv2.CfnApi, dependencies: cdk.CfnResource[]) => {
   const apiDevelopment = createApiDeployment('ApiDevelopment', stack, api)
