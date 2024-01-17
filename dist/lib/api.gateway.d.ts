@@ -1,5 +1,5 @@
 import * as cdk from 'aws-cdk-lib';
-export declare const createApiGateway: (name: string, stack: cdk.Stack, allowHeaders: string[]) => cdk.aws_apigatewayv2.CfnApi;
+export declare const createApiGateway: (name: string, stack: cdk.Stack, _allowHeaders: string[]) => cdk.aws_apigatewayv2.CfnApi;
 export declare const createApiIntegration: (name: string, props: {
     stack: cdk.Stack;
     integrationMethod: string;
