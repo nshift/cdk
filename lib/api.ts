@@ -33,6 +33,7 @@ export const createEndpoint = (
     stack: cdk.Stack
     api: cdk.aws_apigatewayv2.CfnApi
     sharedLayer: cdk.aws_lambda.LayerVersion
+    runtime?: cdk.aws_lambda.Runtime
     memorySize?: number
     environment?: { [key: string]: string }
   }
@@ -43,6 +44,7 @@ export const createEndpoint = (
     environment: props.environment,
     stack: props.stack,
     sharedLayer: props.sharedLayer,
+    runtime: props.runtime,
     memorySize: props.memorySize,
   })
   const integration = createApiIntegration(`${prefix}Integration`, {

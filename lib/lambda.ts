@@ -15,6 +15,7 @@ export const createLambda = (
     sharedLayer: cdk.aws_lambda.LayerVersion
     path: string
     handler: string
+    runtime?: cdk.aws_lambda.Runtime
     memorySize?: number
     environment?: { [key: string]: string }
   }
@@ -23,7 +24,7 @@ export const createLambda = (
     functionName: makeName(name),
     code: cdk.aws_lambda.Code.fromAsset(props.path),
     handler: props.handler,
-    runtime: cdk.aws_lambda.Runtime.NODEJS_18_X,
+    runtime: props.runtime ?? cdk.aws_lambda.Runtime.NODEJS_18_X,
     timeout: cdk.Duration.seconds(30),
     memorySize: props.memorySize ?? 2048,
     environment: props.environment,

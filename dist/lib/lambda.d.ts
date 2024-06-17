@@ -5,6 +5,7 @@ export declare const createLambda: (name: string, props: {
     sharedLayer: cdk.aws_lambda.LayerVersion;
     path: string;
     handler: string;
+    runtime?: cdk.aws_lambda.Runtime | undefined;
     memorySize?: number | undefined;
     environment?: {
         [key: string]: string;

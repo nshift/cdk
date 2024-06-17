@@ -13,6 +13,7 @@ export declare const createEndpoint: (prefix: string, props: {
     stack: cdk.Stack;
     api: cdk.aws_apigatewayv2.CfnApi;
     sharedLayer: cdk.aws_lambda.LayerVersion;
+    runtime?: cdk.aws_lambda.Runtime | undefined;
     memorySize?: number | undefined;
     environment?: {
         [key: string]: string;
