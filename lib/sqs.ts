@@ -7,7 +7,7 @@ export const createSQS = (name: string, props: { stack: cdk.Stack }, fifo: boole
     retentionPeriod: cdk.Duration.days(7),
   })
   return new cdk.aws_sqs.Queue(props.stack, makeId(`${name}Queue`), {
-    queueName: makeName(`${name}Queue${fifo ? '.fifo' : ''}`),
+    queueName: makeName(`${name}Queue`) + fifo ? '.fifo' : '',
     visibilityTimeout: cdk.Duration.seconds(30),
     fifo,
     deadLetterQueue: {
