@@ -10,7 +10,7 @@ export const makeName = (...names: string[]) => {
     [projectName, environment]
       .concat(names)
       .map((name) => upperFirst(camelize(name)))
-      .join()
+      .join('')
   ).replace(new RegExp('_', 'g'), '-')
 }
 
@@ -20,5 +20,5 @@ export const makeQueueName = (...names: string[]) => {
   return [projectName, environment]
     .concat(names)
     .map((name) => upperFirst(camelize(name)))
-    .join()
+    .join('')
 }
