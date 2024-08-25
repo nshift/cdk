@@ -1,7 +1,7 @@
 import * as cdk from 'aws-cdk-lib'
 import { makeId, makeName } from './naming'
 
-export const createSQS = (name: string, props: { stack: cdk.Stack }) => {
+export const createSQS = (name: string, props: { stack: cdk.Stack }, fifo: boolean = false) => {
   const deadLetterQueue = new cdk.aws_sqs.Queue(props.stack, makeId(`${name}DeadLetterQueue`), {
     queueName: makeName(`${name}DeadLetterQueue`),
     retentionPeriod: cdk.Duration.days(7),
@@ -9,6 +9,7 @@ export const createSQS = (name: string, props: { stack: cdk.Stack }) => {
   return new cdk.aws_sqs.Queue(props.stack, makeId(`${name}Queue`), {
     queueName: makeName(`${name}Queue`),
     visibilityTimeout: cdk.Duration.seconds(30),
+    fifo,
     deadLetterQueue: {
       maxReceiveCount: 1,
       queue: deadLetterQueue,
