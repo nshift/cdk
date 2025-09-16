@@ -10,6 +10,7 @@ export const createDynamoDbTable = (
     secondaryIndexes?: {
       indexName: string
       partitionKey: { name: string; type: cdk.aws_dynamodb.AttributeType }
+      sortKey?: { name: string; type: cdk.aws_dynamodb.AttributeType }
     }[]
   }
 ) => {
@@ -25,10 +26,10 @@ export const createDynamoDbTable = (
       table.addGlobalSecondaryIndex({
         indexName: secondaryIndex.indexName,
         partitionKey: secondaryIndex.partitionKey,
+        sortKey: secondaryIndex.sortKey,
         projectionType: cdk.aws_dynamodb.ProjectionType.ALL,
       })
     })
-    
   }
   return table
 }

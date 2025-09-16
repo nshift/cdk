@@ -15,5 +15,9 @@ export declare const createDynamoDbTable: (name: string, props: {
             name: string;
             type: cdk.aws_dynamodb.AttributeType;
         };
+        sortKey?: {
+            name: string;
+            type: cdk.aws_dynamodb.AttributeType;
+        } | undefined;
     }[] | undefined;
 }) => cdk.aws_dynamodb.Table;
