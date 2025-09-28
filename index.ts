@@ -1,6 +1,7 @@
 export * from './lib/api.gateway'
 export * from './lib/api'
 export * from './lib/buckets'
+export * from './lib/cognito'
 export * from './lib/dynamodb'
 export * from './lib/environment'
 export * from './lib/lambda'
