@@ -32,6 +32,26 @@ export const createApiIntegration = (
     payloadFormatVersion: '2.0',
   })
 
+export const createAuthorizer = (
+  name: string,
+  props: {
+    stack: cdk.Stack
+    api: cdk.aws_apigatewayv2.CfnApi
+    userPool: cdk.aws_cognito.UserPool
+    userPoolClient: cdk.aws_cognito.UserPoolClient
+  }
+) =>
+  new cdk.aws_apigatewayv2.CfnAuthorizer(props.stack, makeId(name), {
+    name: makeName(name),
+    apiId: cdk.Fn.ref(props.api.logicalId),
+    authorizerType: 'JWT',
+    identitySource: ['$request.header.Authorization'],
+    jwtConfiguration: {
+      audience: [props.userPoolClient.userPoolClientId],
+      issuer: props.userPool.userPoolProviderUrl,
+    },
+  })
+
 export const createApiRoute = (
   name: string,
   props: {
@@ -39,12 +59,14 @@ export const createApiRoute = (
     routeKey: string
     api: cdk.aws_apigatewayv2.CfnApi
     integration: cdk.aws_apigatewayv2.CfnIntegration
+    authorizer?: cdk.aws_apigatewayv2.CfnAuthorizer
   }
 ) =>
   new cdk.aws_apigatewayv2.CfnRoute(props.stack, makeId(name), {
     apiId: cdk.Fn.ref(props.api.logicalId),
     routeKey: props.routeKey,
-    authorizationType: 'NONE',
+    authorizationType: props.authorizer ? 'JWT' : 'NONE',
+    authorizerId: props.authorizer?.ref,
     target: `integrations/${cdk.Fn.ref(props.integration.logicalId)}`,
   })
 
