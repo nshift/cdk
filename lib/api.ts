@@ -36,6 +36,7 @@ export const createEndpoint = (
     runtime?: cdk.aws_lambda.Runtime
     memorySize?: number
     environment?: { [key: string]: string }
+    authorizer?: cdk.aws_apigatewayv2.CfnAuthorizer
   }
 ) => {
   const lambda = createLambda(`${prefix}Function`, {
@@ -58,6 +59,7 @@ export const createEndpoint = (
     stack: props.stack,
     api: props.api,
     integration: integration,
+    authorizer: props.authorizer,
   })
   route.addDependency(integration)
   const lambdaPermission = createLambdaPermission(`${prefix}Permission`, props.stack, lambda)

@@ -18,6 +18,7 @@ export declare const createEndpoint: (prefix: string, props: {
     environment?: {
         [key: string]: string;
     } | undefined;
+    authorizer?: cdk.aws_apigatewayv2.CfnAuthorizer | undefined;
 }) => {
     lambda: cdk.aws_lambda.Function;
     integration: cdk.aws_apigatewayv2.CfnIntegration;
