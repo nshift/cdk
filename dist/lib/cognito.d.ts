@@ -14,3 +14,4 @@ export declare const createUserPoolClient: (name: string, props: {
     stack: cdk.Stack;
     userPool: cdk.aws_cognito.UserPool;
 }) => cdk.aws_cognito.UserPoolClient;
+export declare const createAutoVerifyLambda: (stack: cdk.Stack) => cdk.aws_lambda.Function;

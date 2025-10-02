@@ -38,3 +38,16 @@ export const createUserPoolClient = (name: string, props: { stack: cdk.Stack; us
     idTokenValidity: cdk.Duration.hours(1),
     refreshTokenValidity: cdk.Duration.days(30),
   })
+
+export const createAutoVerifyLambda = (stack: cdk.Stack) =>
+  new cdk.aws_lambda.Function(stack, makeId('CognitoPreSignUpLambda'), {
+    runtime: cdk.aws_lambda.Runtime.NODEJS_18_X,
+    handler: 'index.handler',
+    code: cdk.aws_lambda.Code.fromInline(`
+    exports.handler = async (event) => {
+      event.response.autoConfirmUser = true;
+      event.response.autoVerifyEmail = true;
+      return event;
+    };
+  `),
+  })
