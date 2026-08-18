@@ -15,13 +15,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createLogGroup = void 0;
 const cdk = __importStar(require("aws-cdk-lib"));
@@ -31,4 +41,4 @@ const createLogGroup = (name, stack, api) => new cdk.aws_logs.CfnLogGroup(stack,
     retentionInDays: 7,
 });
 exports.createLogGroup = createLogGroup;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9nLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vbGliL2xvZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLGlEQUFrQztBQUNsQyxxQ0FBaUM7QUFFMUIsTUFBTSxjQUFjLEdBQUcsQ0FBQyxJQUFZLEVBQUUsS0FBZ0IsRUFBRSxHQUFnQyxFQUFFLEVBQUUsQ0FDakcsSUFBSSxHQUFHLENBQUMsUUFBUSxDQUFDLFdBQVcsQ0FBQyxLQUFLLEVBQUUsSUFBQSxlQUFNLEVBQUMsSUFBSSxDQUFDLEVBQUU7SUFDaEQsWUFBWSxFQUFFLG1CQUFtQixHQUFHLENBQUMsSUFBSSxFQUFFO0lBQzNDLGVBQWUsRUFBRSxDQUFDO0NBQ25CLENBQUMsQ0FBQTtBQUpTLFFBQUEsY0FBYyxrQkFJdkIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBjZGsgZnJvbSAnYXdzLWNkay1saWInXG5pbXBvcnQgeyBtYWtlSWQgfSBmcm9tICcuL25hbWluZydcblxuZXhwb3J0IGNvbnN0IGNyZWF0ZUxvZ0dyb3VwID0gKG5hbWU6IHN0cmluZywgc3RhY2s6IGNkay5TdGFjaywgYXBpOiBjZGsuYXdzX2FwaWdhdGV3YXl2Mi5DZm5BcGkpID0+XG4gIG5ldyBjZGsuYXdzX2xvZ3MuQ2ZuTG9nR3JvdXAoc3RhY2ssIG1ha2VJZChuYW1lKSwge1xuICAgIGxvZ0dyb3VwTmFtZTogYC9hd3MvYXBpZ2F0ZXdheS8ke2FwaS5uYW1lfWAsXG4gICAgcmV0ZW50aW9uSW5EYXlzOiA3LFxuICB9KVxuIl19
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9nLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vbGliL2xvZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxpREFBa0M7QUFDbEMscUNBQWlDO0FBRTFCLE1BQU0sY0FBYyxHQUFHLENBQUMsSUFBWSxFQUFFLEtBQWdCLEVBQUUsR0FBZ0MsRUFBRSxFQUFFLENBQ2pHLElBQUksR0FBRyxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUMsS0FBSyxFQUFFLElBQUEsZUFBTSxFQUFDLElBQUksQ0FBQyxFQUFFO0lBQ2hELFlBQVksRUFBRSxtQkFBbUIsR0FBRyxDQUFDLElBQUksRUFBRTtJQUMzQyxlQUFlLEVBQUUsQ0FBQztDQUNuQixDQUFDLENBQUE7QUFKUyxRQUFBLGNBQWMsa0JBSXZCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgY2RrIGZyb20gJ2F3cy1jZGstbGliJ1xuaW1wb3J0IHsgbWFrZUlkIH0gZnJvbSAnLi9uYW1pbmcnXG5cbmV4cG9ydCBjb25zdCBjcmVhdGVMb2dHcm91cCA9IChuYW1lOiBzdHJpbmcsIHN0YWNrOiBjZGsuU3RhY2ssIGFwaTogY2RrLmF3c19hcGlnYXRld2F5djIuQ2ZuQXBpKSA9PlxuICBuZXcgY2RrLmF3c19sb2dzLkNmbkxvZ0dyb3VwKHN0YWNrLCBtYWtlSWQobmFtZSksIHtcbiAgICBsb2dHcm91cE5hbWU6IGAvYXdzL2FwaWdhdGV3YXkvJHthcGkubmFtZX1gLFxuICAgIHJldGVudGlvbkluRGF5czogNyxcbiAgfSlcbiJdfQ==

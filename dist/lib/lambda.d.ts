@@ -5,10 +5,10 @@ export declare const createLambda: (name: string, props: {
     sharedLayer: cdk.aws_lambda.LayerVersion;
     path: string;
     handler: string;
-    runtime?: cdk.aws_lambda.Runtime | undefined;
-    memorySize?: number | undefined;
+    runtime?: cdk.aws_lambda.Runtime;
+    memorySize?: number;
     environment?: {
         [key: string]: string;
-    } | undefined;
+    };
 }) => cdk.aws_lambda.Function;
 export declare const createLambdaPermission: (name: string, stack: cdk.Stack, lambda: cdk.aws_lambda.Function) => cdk.aws_lambda.CfnPermission;

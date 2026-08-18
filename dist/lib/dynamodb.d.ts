@@ -8,7 +8,7 @@ export declare const createDynamoDbTable: (name: string, props: {
     sortKey?: {
         name: string;
         type: cdk.aws_dynamodb.AttributeType;
-    } | undefined;
+    };
     secondaryIndexes?: {
         indexName: string;
         partitionKey: {
@@ -18,6 +18,6 @@ export declare const createDynamoDbTable: (name: string, props: {
         sortKey?: {
             name: string;
             type: cdk.aws_dynamodb.AttributeType;
-        } | undefined;
-    }[] | undefined;
+        };
+    }[];
 }) => cdk.aws_dynamodb.Table;

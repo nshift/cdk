@@ -7,8 +7,10 @@
     "experimentalDecorators": true,
     "inlineSourceMap": true,
     "inlineSources": true,
+    "isolatedModules": true,
     "lib": [
-      "es2019"
+      "es2019",
+      "esnext.disposable"
     ],
     "module": "CommonJS",
     "noEmitOnError": false,
@@ -19,11 +21,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
+    "rootDir": ".",
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "stripInternal": true,
-    "target": "ES2019"
+    "target": "ES2019",
+    "types": [
+      "node"
+    ]
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules", "dist", "**/*.test.ts"]

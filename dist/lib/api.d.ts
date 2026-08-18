@@ -13,12 +13,12 @@ export declare const createEndpoint: (prefix: string, props: {
     stack: cdk.Stack;
     api: cdk.aws_apigatewayv2.CfnApi;
     sharedLayer: cdk.aws_lambda.LayerVersion;
-    runtime?: cdk.aws_lambda.Runtime | undefined;
-    memorySize?: number | undefined;
+    runtime?: cdk.aws_lambda.Runtime;
+    memorySize?: number;
     environment?: {
         [key: string]: string;
-    } | undefined;
-    authorizer?: cdk.aws_apigatewayv2.CfnAuthorizer | undefined;
+    };
+    authorizer?: cdk.aws_apigatewayv2.CfnAuthorizer;
 }) => {
     lambda: cdk.aws_lambda.Function;
     integration: cdk.aws_apigatewayv2.CfnIntegration;
