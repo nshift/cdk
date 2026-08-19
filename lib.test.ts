@@ -76,7 +76,7 @@ test('Layer creation', () => {
   const template = Template.fromStack(stack)
   template.hasResourceProperties('AWS::Lambda::LayerVersion', {
     LayerName: 'nshift-test-accounting-shared-layer',
-    CompatibleRuntimes: ['nodejs18.x'],
+    CompatibleRuntimes: ['nodejs24.x'],
   })
 })
 
@@ -94,7 +94,7 @@ test('Endpoint creation', () => {
   template.hasResourceProperties('AWS::Lambda::Function', {
     FunctionName: 'nshift-test-create-document-function',
     Handler: 'api.createApi',
-    Runtime: 'nodejs18.x',
+    Runtime: 'nodejs24.x',
     Timeout: 30,
     MemorySize: 2048,
     Environment: {

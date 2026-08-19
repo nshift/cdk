@@ -5,7 +5,7 @@ export const createSharedLayer = (name: string, path: string, stack: cdk.Stack) 
   new cdk.aws_lambda.LayerVersion(stack, makeId(name), {
     layerVersionName: makeName(name),
     code: cdk.aws_lambda.Code.fromAsset(path),
-    compatibleRuntimes: [cdk.aws_lambda.Runtime.NODEJS_18_X],
+    compatibleRuntimes: [cdk.aws_lambda.Runtime.NODEJS_24_X],
   })
 
 export const createLambda = (
@@ -24,7 +24,7 @@ export const createLambda = (
     functionName: makeName(name),
     code: cdk.aws_lambda.Code.fromAsset(props.path),
     handler: props.handler,
-    runtime: props.runtime ?? cdk.aws_lambda.Runtime.NODEJS_18_X,
+    runtime: props.runtime ?? cdk.aws_lambda.Runtime.NODEJS_24_X,
     timeout: cdk.Duration.seconds(30),
     memorySize: props.memorySize ?? 2048,
     environment: props.environment,
